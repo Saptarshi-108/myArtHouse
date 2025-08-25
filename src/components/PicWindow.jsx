@@ -18,11 +18,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function PicWindow({ open, onClose, imageUrl }) {
+export default function PicWindow({ open, onClose, imageUrl, title }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDisplay, setImageDisplay] = useState(false);
 
-  useEffect(() => {.
+  useEffect(() => {
     if (open) {
       setImageLoaded(false);
       setImageDisplay(false);
@@ -33,7 +33,7 @@ export default function PicWindow({ open, onClose, imageUrl }) {
     // The image has finished downloading, now we delay its display.
     setTimeout(() => {
       setImageLoaded(true);
-    }, 2000); // 2000ms = 2-second delay
+    }, 1000); // 1000ms = 1-second delay
   };
 
   useEffect(() => {
@@ -48,9 +48,10 @@ export default function PicWindow({ open, onClose, imageUrl }) {
       aria-labelledby="customized-dialog-title"
       open={open}
       maxWidth="lg"
+      sx={{justifyContent:'center',alignItems:'center'}}
     >
       <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-        Image
+        {title || 'Image'}
       </DialogTitle>
       <IconButton
         aria-label="close"
@@ -65,11 +66,10 @@ export default function PicWindow({ open, onClose, imageUrl }) {
         <CloseIcon />
       </IconButton>
       <DialogContent dividers>
-        {/* The loader is rendered only if the image is not ready to be displayed. */}
         {!imageDisplay && <Loader />}
         <img
           src={imageUrl}
-          alt="Full-size image"
+          alt={title || 'Full-size image'}
           style={{
             visibility: imageDisplay ? 'visible' : 'hidden',
             maxWidth: '100%',

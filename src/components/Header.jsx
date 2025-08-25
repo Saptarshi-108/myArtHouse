@@ -8,34 +8,34 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
 
-function HideOnScroll({ children }) {
+export function HideOnScroll({ children, timeout = 500 }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
   });
 
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
+    // The timeout prop is now passed dynamically from the function's parameters.
+    <Slide appear={false} direction="down" in={!trigger} timeout={timeout}>
       {children}
     </Slide>
   );
 }
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 function Header() {
   return (
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll>
-        <AppBar color="primary" sx={{backgroundColor:'#A2D5C6'}}>
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{
-              color:'#44675cff'
+        <AppBar color="primary" sx={{backgroundColor:'#844d36', }}>
+          <Toolbar sx={{alignItems:'center', justifyContent:'center'}}>
+            <Typography variant="h1" component="div" sx={{
+               fontFamily:'fantasy',
+               fontWeight:'regular',
+               fontSize:170,
+              color:'#fbe9d0'
             }}>
-              My Arts
+              Art House 
             </Typography>
           </Toolbar>
         </AppBar>

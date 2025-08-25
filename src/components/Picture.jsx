@@ -1,127 +1,63 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme, styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import { useTheme } from '@mui/material/styles';
 
-// Styled component for the dialog box, using MUI's `styled` utility
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
-  },
-}));
-
-/**
- * Reusable Dialog component to display a full-size image.
- * @param {object} props - Component props.
- * @param {boolean} props.open - Controls the dialog's visibility.
- * @param {function} props.onClose - Function to close the dialog.
- * @param {string} props.imageUrl - The URL of the image to display.
- */
-function CustomizedDialogs({ open, onClose, imageUrl }) {
-  return (
-    <BootstrapDialog
-      onClose={onClose}
-      aria-labelledby="customized-dialog-title"
-      open={open}
-      maxWidth="lg"
-    >
-      <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-        Image
-      </DialogTitle>
-      <IconButton
-        aria-label="close"
-        onClick={onClose}
-        sx={(theme) => ({
-          position: 'absolute',
-          right: 8,
-          top: 8,
-          color: theme.palette.grey[500],
-        })}
-      >
-        <CloseIcon />
-      </IconButton>
-      <DialogContent dividers>
-        <img
-          src={imageUrl}
-          alt="Full-size image"
-          style={{
-            display: 'block',
-            maxWidth: '100%',
-            maxHeight: '80vh',
-            margin: 'auto',
-          }}
-        />
-      </DialogContent>
-    </BootstrapDialog>
-  );
-}
+// Import the new components
+import PicWindow from './PicWindow.jsx';
+import Fullload from './FullLoad.jsx';
 
 /**
  * The main application component that includes a loading screen and an image gallery.
  */
-export default function App() {
-  // State to manage the loading status
-  const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect to simulate a loading process and hide the loader after a delay
-  useEffect(() => {
-    // A timer to simulate data fetching or asset loading
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // 2-second delay to show the animation
-  }, []);
-
+export default function Picture() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   // State to manage the dialog box for the images
   const [open, setOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState({ url: '', title: '' });
 
-  const handleClickOpen = (imageUrl) => {
-    setSelectedImage(imageUrl);
+  // Modified to also pass the title
+  const handleClickOpen = (item) => {
+    setSelectedImage({ url: item.img, title: item.title });
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setSelectedImage('');
+    setSelectedImage({ url: '', title: '' });
   };
 
-  // The loading screen component
-  const LoadingScreen = () => (
-    <div style={loadingScreenStyles}>
-      <div style={loaderStyles}></div>
-    </div>
-  );
-
-  // The main content component (the image gallery)
   const MainContent = () => (
-    <Box sx={{
-      width: '100%',
-      height: '80%',
-      paddingLeft: { xs: '2%', sm: '5%', md: '10%' },
-      paddingRight: { xs: '2%', sm: '5%', md: '10%' },
-      paddingBottom: '10%',
-      paddingTop: '2%',
-      overflowY: 'scroll'
-    }}>
+    <Box 
+      className="hide-scrollbar" // This is the correct way to apply the CSS.
+      sx={{
+        width: '100%',
+        height: '100%',
+        paddingLeft: { xs: '2%', sm: '5%', md: '10%' },
+        paddingRight: { xs: '2%', sm: '5%', md: '10%' },
+        paddingBottom: '10%',
+        paddingTop: '10%',
+        overflowY: 'scroll',
+        backgroundColor: '#6da8cfff',
+      }}
+    >
+      <h1 style={{ textAlign: 'center' }}>My Arts</h1>
       <ImageList
-        variant="masonry"
+        variant="woven"
         cols={matches ? 3 : 2}
         gap={16}
+        sx={{
+          marginTop: 0,
+        }}
       >
         {itemData.map((item) => (
-          <ImageListItem key={item.img} onClick={() => handleClickOpen(item.img)}>
+          <ImageListItem key={item.img} onClick={() => handleClickOpen(item)}>
             <img
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -138,78 +74,19 @@ export default function App() {
         ))}
       </ImageList>
 
-      <CustomizedDialogs
+      <PicWindow
         open={open}
         onClose={handleClose}
-        imageUrl={selectedImage}
+        imageUrl={selectedImage.url}
+        title={selectedImage.title}
       />
     </Box>
   );
 
   return (
-    <div style={containerStyles}>
-      {/* Conditionally render the loading screen or the main content */}
-      {isLoading ? <LoadingScreen /> : <MainContent />}
-    </div>
+    <MainContent/>
   );
 }
-
-// Inline styles for the loading screen and loader.
-// This is an alternative to using styled-components or a separate CSS file.
-const containerStyles = {
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  overflow: 'hidden',
-};
-
-const loadingScreenStyles = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundColor: '#fff',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  zIndex: 9999,
-};
-
-// **Updated loader styles**
-const loaderStyles = {
-  width: '120px',
-  height: '20px',
-  background: `
-    linear-gradient(#000 50%, #0000 0),
-    linear-gradient(#0000 50%, #000 0),
-    linear-gradient(#000 50%, #0000 0),
-    linear-gradient(#0000 50%, #000 0),
-    linear-gradient(#000 50%, #0000 0),
-    linear-gradient(#0000 50%, #000 0)
-    #ddd`,
-  backgroundSize: 'calc(100%/6 + 1px) 200%',
-  backgroundRepeat: 'no-repeat',
-  animation: 'l12 2s infinite',
-};
-
-// CSS for the keyframe animation
-// This must be added to a global stylesheet or programmatically.
-const styleTag = document.createElement('style');
-styleTag.innerHTML = `
-  @keyframes l12 {
-    0%   {background-position: calc(0*100%/5) 100%,calc(1*100%/5)   0%,calc(2*100%/5) 100%,calc(3*100%/5)   0%,calc(4*100%/5) 100%,calc(5*100%/5)   0%}
-    16.67% {background-position: calc(0*100%/5)   0%,calc(1*100%/5)   0%,calc(2*100%/5) 100%,calc(3*100%/5)   0%,calc(4*100%/5) 100%,calc(5*100%/5)   0%}
-    33.33% {background-position: calc(0*100%/5)   0%,calc(1*100%/5) 100%,calc(2*100%/5) 100%,calc(3*100%/5)   0%,calc(4*100%/5) 100%,calc(5*100%/5)   0%}
-    50%    {background-position: calc(0*100%/5)   0%,calc(1*100%/5) 100%,calc(2*100%/5)   0%,calc(3*100%/5)   0%,calc(4*100%/5) 100%,calc(5*100%/5)   0%}
-    66.67% {background-position: calc(0*100%/5)   0%,calc(1*100%/5) 100%,calc(2*100%/5)   0%,calc(3*100%/5) 100%,calc(4*100%/5) 100%,calc(5*100%/5)   0%}
-    83.33% {background-position: calc(0*100%/5)   0%,calc(1*100%/5) 100%,calc(2*100%/5)   0%,calc(3*100%/5) 100%,calc(4*100%/5)   0%,calc(5*100%/5)   0%}
-    100%   {background-position: calc(0*100%/5)   0%,calc(1*100%/5) 100%,calc(2*100%/5)   0%,calc(3*100%/5) 100%,calc(4*100%/5)   0%,calc(5*100%/5) 100%}
-  }
-`;
-document.head.appendChild(styleTag);
 
 const itemData = [
   {
