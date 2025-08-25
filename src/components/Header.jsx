@@ -22,17 +22,30 @@ export function HideOnScroll({ children, timeout = 500 }) {
   );
 }
 
+// export function AppearOnScroll({children, timeout=500}){
+//   const trigger=useScrollTrigger({
+//     disableHysteresis:true,
+//     threshold:100,
+//   });
+
+//   return (
+//     <Slide appear={true} direction="up" in={trigger} timeout={timeout}>
+//       {children}
+//     </Slide>
+//   );
+// }
+
 function Header() {
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
       <HideOnScroll>
-        <AppBar color="primary" sx={{backgroundColor:'#844d36', }}>
+        <AppBar color="primary" sx={{backgroundColor:'#844d36'}}>
           <Toolbar sx={{alignItems:'center', justifyContent:'center'}}>
             <Typography variant="h1" component="div" sx={{
                fontFamily:'fantasy',
                fontWeight:'regular',
-               fontSize:170,
+               fontSize:'10vw',
               color:'#fbe9d0'
             }}>
               Art House 
