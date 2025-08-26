@@ -50,7 +50,7 @@ export default function PicWindow({ open, onClose, imageUrl, title }) {
       maxWidth="lg"
       sx={{justifyContent:'center',alignItems:'center'}}
     >
-      <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+      <DialogTitle sx={{ m: 0, p: 2,   backgroundColor:'#faffd6ff', fontFamily:'monospace', fontWeight:'bold', fontSize:20, overflow:'hidden' }} id="customized-dialog-title">
         {title || 'Image'}
       </DialogTitle>
       <IconButton

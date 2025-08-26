@@ -48,7 +48,7 @@ function Header() {
                fontSize:'10vw',
               color:'#fbe9d0'
             }}>
-              Art House 
+              ᵐʸArtᴴᵒᵘˢᵉ
             </Typography>
           </Toolbar>
         </AppBar>

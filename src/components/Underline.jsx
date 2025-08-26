@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
  */
 const Underline = styled(Box)(({ fontSize, fontWeight, fontFamily }) => ({
   // We use `display: 'inline'` to ensure the underline wraps with the text.
-  display: 'inline',
+  display: 'flex',
   cursor: 'pointer',
   // Set font styles based on props.
   fontSize: `${fontSize}px`,
@@ -21,10 +21,10 @@ const Underline = styled(Box)(({ fontSize, fontWeight, fontFamily }) => ({
   fontFamily,
   // The animated underline effect is created using a linear gradient on the background.
   background: `
-    linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
-    linear-gradient(to right, rgba(118, 47, 45, 1), rgba(127, 126, 126, 1), rgba(44, 117, 190, 1))
+    linear-gradient(to right, rgba(13, 13, 15, 1), rgba(36, 36, 42, 1)),
+    linear-gradient(to right, rgba(251, 216, 63, 1), rgba(255, 255, 66, 1), rgba(36, 36, 42, 1))
   `,
-  backgroundSize: '100% 0.1em, 0 0.1em',
+  backgroundSize: '100% 0.1em, 0 4px',
   backgroundPosition: '100% 100%, 0 100%',
   backgroundRepeat: 'no-repeat',
   // The transition animates the change in background size.

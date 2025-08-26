@@ -13,7 +13,7 @@ const Footer = () => {
         color: "white",
         textAlign: "center",
         padding: "16px",
-        position: "fixed",
+        position: "relative",
         bottom: 0,
         width: "100%",
         boxSizing: "border-box",

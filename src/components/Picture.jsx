@@ -7,6 +7,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Underline from './Underline.jsx';
+import Intro from "./Intro";
 
 // Import the new components
 import PicWindow from "./PicWindow.jsx";
@@ -43,12 +44,14 @@ export default function Picture() {
         paddingRight: { xs: "2%", sm: "5%", md: "10%" },
         paddingBottom: "10%",
         paddingTop:"1%",
-        backgroundColor: "#6da8cfff",
-        scrollBehavior:'smooth'
+        backgroundColor: "#24242aff",
+        scrollBehavior:'smooth',
+  
       }}
     >
-      <h3 style={{ textAlign: "center", fontFamily:'fantasy', paddingBottom:'5%', fontSize:120, fontWeight:25 }}>
-        <Underline>
+            <Intro />
+      <h3 style={{ textAlign: "center", fontFamily:'fantasy', paddingBottom:'5%', fontSize:120, fontWeight:25,color:'#f3f325ff' }}>
+        <Underline sx={{height:5}}>
         My Arts
         </Underline>
       </h3>
@@ -57,8 +60,12 @@ export default function Picture() {
         cols={matches ? 3 : 2}
         gap={16}
         sx={{
-          marginTop: 0,
+          marginTop:0,
+          padding:4,
           overflow: "hidden",
+          backgroundColor:'#f0ff8dff',
+          borderRadius:15
+
         }}
       >
         {itemData.map((item) => (
@@ -71,7 +78,7 @@ export default function Picture() {
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer",  borderRadius:15 }}
             />
             <ImageListItemBar
               title={item.title}
@@ -88,6 +95,7 @@ export default function Picture() {
                   fontFamily: "monospace",
                   fontWeight: "regular",
                 },
+               
               }}
             />
           </ImageListItem>
