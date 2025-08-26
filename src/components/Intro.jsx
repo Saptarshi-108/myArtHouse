@@ -133,8 +133,8 @@ export default function Intro() {
         </Typography>
         <Box
           component="img"
-          src="src\pictures\IMG_20250826_193049.jpg"
-          alt="Satyajit Ray"
+          src="/pictures/bearded-guy.jpg"
+          alt="A sketchy guy's sketch."
           sx={{
             position: "relative",
             inset: 0,
@@ -157,3 +157,4 @@ export default function Intro() {
     </Box>
   );
 }
+
