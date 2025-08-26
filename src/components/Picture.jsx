@@ -136,3 +136,4 @@ const itemData = [
   { img: "/pictures/the-journey.jpg", title: "The Journey", author: "Journey through open barren lands" },
   { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" },
 ];
+
