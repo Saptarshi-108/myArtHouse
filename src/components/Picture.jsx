@@ -8,22 +8,15 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Underline from "./Underline.jsx";
 import Intro from "./Intro";
-
-// Import the new components
 import PicWindow from "./PicWindow.jsx";
 
-/**
- * The main application component that includes a loading screen and an image gallery.
- */
 export default function Picture() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
-  // State to manage the dialog box for the images
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({ url: "", title: "" });
 
-  // Modified to also pass the title
   const handleClickOpen = (item) => {
     setSelectedImage({ url: item.img, title: item.title });
     setOpen(true);
@@ -36,7 +29,7 @@ export default function Picture() {
 
   const MainContent = () => (
     <Box
-      className="hide-scrollbar" // This is the correct way to apply the CSS.
+      className="hide-scrollbar"
       sx={{
         width: "100%",
         height: "100%",
@@ -76,14 +69,12 @@ export default function Picture() {
         {itemData.map((item) => (
           <ImageListItem key={item.img} onClick={() => handleClickOpen(item)}>
             <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
+              src={item.img}
               alt={item.title}
               loading="lazy"
               style={{
                 cursor: "pointer",
                 borderRadius: 15,
-                // border: "3px solid #000", 
               }}
             />
             <ImageListItemBar
@@ -120,126 +111,28 @@ export default function Picture() {
 }
 
 const itemData = [
-  {
-    img: "/pictures/avtar.jpg",
-    title: "Team Avatar",
-    author: "Some of my favourite characters from ATLA",
-  },
-  {
-    img: "/pictures/Batman.png",
-    title: "Batman",
-    author: "The Dark knight",
-  },
-  {
-    img: "/pictures/bobross.png",
-    title: "Bob Ross",
-    author: "One of my favourite artists... Bob Ross",
-  },
-  {
-    img: "/pictures/BobRossArt.png",
-    title: "The Mountains",
-    author: "From Bob Ross",
-  },
-  {
-    img: "/pictures/cool.jpg",
-    title: "The Cool guy",
-    author: "Doodling in boring classes...",
-  },
-  {
-    img: "/pictures/ACvalhalla.png",
-    title: "Viking warrior",
-    author: "Take us to Valhalla!",
-  },
-  {
-    img: "/pictures/dark is the night.png",
-    title: "Dark is the Night",
-    author: "A Soviet Rifleman smoking in the trench",
-  },
-  {
-    img: "/pictures/ghibli howling castle.jpg",
-    title: "Ghibli Howl's Castle",
-    author: "from Howl's Moving Castle (Hayao Miyazaki)",
-  },
-  { img: "/pictures/FujiKaze.jpg",
-    title: "Fuji Kaze",
-    author: "Shinunoga E-Wa Album Cover (2021)"
-  },
-  {
-    img: "/pictures/IMG_20250516_202742.jpg",
-    title: "Solitary Knight",
-    author: "Lonely knight mourning his fallen brothers.",
-  },
-  {
-    img: "/pictures/Kedarnath.png",
-    title: "Kedarnath Mandir",
-    author: "Om namah shivay (ॐ नमः शिवाय)",
-  },
-  {
-    img: "/pictures/IMG_20250711_191225.jpg",
-    title: "H.P. Lovecraft",
-    author: "Father of Cosmic Horror",
-  },
-  {
-    img: "/pictures/old and young.jpg",
-    title: "Old and Young",
-    author: "Am I bored?",
-  },
-  {
-    img: "/pictures/robot.jpg",
-    title: "Smokin' Hot",
-    author: "This gladiator has a hot sword.LITERALLY.",
-  },
-  {
-    img: "/pictures/shiva.png",
-    title: "Mahadev",
-    author: "Har Har Mahadev",
-  },
-  {
-    img: "/pictures/sketch.jpg",
-    title: "Portrait sketches",
-    author: "Sketching for practice",
-  },
-  {
-    img: "/pictures/takehiko inoue.jpg",
-    title: "Takehiko Inoue",
-    author: "Author and Illustrator of Vagabond",
-  },
-  {
-    img: "/pictures/SatyajitRay.png",
-    title: "Satyajit Ray",
-    author: "Eminent Artist,Oscar winning Film-Director,Author.",
-  },
-  {
-    img: "/pictures/Ronin.jpg",
-    title: "Lone Samurai",
-    author: "Two Swords - One for man, another for monsters.",
-  },
-    {
-    img: "/pictures/Budhha.jpg",
-    title: "Budhha in bliss",
-    author: "Buddham Saranam Gachami",
-  },
-    {
-    img: "/pictures/Ghost.jpg",
-    title: "Ghost (COD)",
-    author: "Lt. Simon 'Ghost' Riley (TF141)",
-  },
-    {
-    img: "/pictures/IMG_20250826_193049.jpg",
-    title: "Don't mess with me",
-    author: "Sketch of a bearded guy.",
-  },
-      {
-    img: "/pictures/TheJourney.jpg",
-    title: "The Journey",
-    author: "Journey through open barren lands",
-  },
-        {
-    img: "/pictures/darkcorridoor.jpg",
-    title: "The Dark Corridor",
-    author: "Dark Corridor in a Hospital (Pic.)",
-  },
+  { img: "/pictures/avtar.jpg", title: "Team Avatar", author: "Some of my favourite characters from ATLA" },
+  { img: "/pictures/batman.png", title: "Batman", author: "The Dark knight" },
+  { img: "/pictures/bobross.png", title: "Bob Ross", author: "One of my favourite artists... Bob Ross" },
+  { img: "/pictures/bobrossart.png", title: "The Mountains", author: "From Bob Ross" },
+  { img: "/pictures/cool.jpg", title: "The Cool guy", author: "Doodling in boring classes..." },
+  { img: "/pictures/acvalhalla.png", title: "Viking warrior", author: "Take us to Valhalla!" },
+  { img: "/pictures/dark-is-the-night.png", title: "Dark is the Night", author: "A Soviet Rifleman smoking in the trench" },
+  { img: "/pictures/ghibli-howling-castle.jpg", title: "Ghibli Howl's Castle", author: "from Howl's Moving Castle (Hayao Miyazaki)" },
+  { img: "/pictures/fujikaze.jpg", title: "Fuji Kaze", author: "Shinunoga E-Wa Album Cover (2021)" },
+  { img: "/pictures/solitary-knight.jpg", title: "Solitary Knight", author: "Lonely knight mourning his fallen brothers." },
+  { img: "/pictures/kedarnath.png", title: "Kedarnath Mandir", author: "Om namah shivay (ॐ नमः शिवाय)" },
+  { img: "/pictures/hp-lovecraft.jpg", title: "H.P. Lovecraft", author: "Father of Cosmic Horror" },
+  { img: "/pictures/old-and-young.jpg", title: "Old and Young", author: "Am I bored?" },
+  { img: "/pictures/robot.jpg", title: "Smokin' Hot", author: "This gladiator has a hot sword. LITERALLY." },
+  { img: "/pictures/shiva.png", title: "Mahadev", author: "Har Har Mahadev" },
+  { img: "/pictures/sketch.jpg", title: "Portrait sketches", author: "Sketching for practice" },
+  { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", author: "Author and Illustrator of Vagabond" },
+  { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", author: "Eminent Artist, Oscar winning Film-Director, Author." },
+  { img: "/pictures/ronin.jpg", title: "Lone Samurai", author: "Two Swords - One for man, another for monsters." },
+  { img: "/pictures/buddha.jpg", title: "Buddha in bliss", author: "Buddham Saranam Gachami" },
+  { img: "/pictures/ghost.jpg", title: "Ghost (COD)", author: "Lt. Simon 'Ghost' Riley (TF141)" },
+  { img: "/pictures/bearded-guy.jpg", title: "Don't mess with me", author: "Sketch of a bearded guy." },
+  { img: "/pictures/the-journey.jpg", title: "The Journey", author: "Journey through open barren lands" },
+  { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" },
 ];
-
-
-
