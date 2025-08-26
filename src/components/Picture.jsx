@@ -156,9 +156,13 @@ const itemData = [
     author: "A Soviet Rifleman smoking in the trench",
   },
   {
-    img: "/pictures/ghibli howling castle .jpg",
+    img: "/pictures/ghibli howling castle.jpg",
     title: "Ghibli Howl's Castle",
     author: "from Howl's Moving Castle (Hayao Miyazaki)",
+  },
+  { img: "/pictures/FujiKaze.jpg",
+    title: "Fuji Kaze",
+    author: "Shinunoga E-Wa Album Cover (2021)"
   },
   {
     img: "/pictures/IMG_20250516_202742.jpg",
@@ -236,5 +240,6 @@ const itemData = [
     author: "Dark Corridor in a Hospital (Pic.)",
   },
 ];
+
 
 
