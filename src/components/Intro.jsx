@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 import { HideOnScroll } from "./Header";
-import TypeWriter from "./Typewriter";
+import TypeWriter from "./TypeWriter";
 /**
  * The Intro component displays a biography and a picture in a responsive layout.
  * It's designed to introduce a user with a short bio and an image on the side.
@@ -138,3 +138,4 @@ export default function Intro() {
     </Box>
   );
 }
+
