@@ -166,11 +166,6 @@ const itemData = [
     author: "Lonely knight mourning his fallen brothers.",
   },
   {
-    img: "",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
     img: "src/pictures/Kedarnath.png",
     title: "Kedarnath Mandir",
     author: "Om namah shivay (ॐ नमः शिवाय)",
@@ -241,3 +236,4 @@ const itemData = [
     author: "Dark Corridor in a Hospital (Pic.)",
   },
 ];
+
