@@ -7,7 +7,8 @@ export default function Loader() {
     styleTag.innerHTML = `
       .loader-container {
         display: flex;
-        margin-left:55vw;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         width: 100%;
       }
