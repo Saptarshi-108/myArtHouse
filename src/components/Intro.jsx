@@ -8,7 +8,19 @@ import TypeWriter from "./TypeWriter";
  * The Intro component displays a biography and a picture in a responsive layout.
  * It's designed to introduce a user with a short bio and an image on the side.
  */
-const messages = [ "Hello!","नमस्ते!","নমস্কার!","Привет!","Ciao!","こんにちは！","你好!","Hallo!","வணக்கம்!","안녕하세요!","Hola!"];
+const messages = [
+  "Hello!",
+  "नमस्ते!",
+  "নমস্কার!",
+  "Привет!",
+  "Ciao!",
+  "こんにちは！",
+  "你好!",
+  "Hallo!",
+  "வணக்கம்!",
+  "안녕하세요!",
+  "Hola!",
+];
 export default function Intro() {
   return (
     <Box
@@ -105,37 +117,43 @@ export default function Intro() {
             fontWeight: "bold",
             marginTop: 0,
             paddingBottom: "10vw",
-            color:'#261616ff'
+            color: "#261616ff",
           }}
         >
           <p>
-          Ever since my early sketches of huts, mountains, and rising suns,
-          drawing has been my way of expressing what words often can’t. Over
-          time, my interest has grown beyond simple sketches into exploring
-          digital illustrations, where I enjoy blending creativity with modern
-          tools.</p> Whether on paper or screen, I have a natural knack for
-          observing details and turning them into art that captures mood,
-          movement, and imagination.
+            Ever since my early sketches of huts, mountains, and rising suns,
+            drawing has been my way of expressing what words often can’t. Over
+            time, my interest has grown beyond simple sketches into exploring
+            digital illustrations, where I enjoy blending creativity with modern
+            tools.
+          </p>{" "}
+          Whether on paper or screen, I have a natural knack for observing
+          details and turning them into art that captures mood, movement, and
+          imagination.
         </Typography>
         <Box
           component="img"
-          src="https://images.unsplash.com/photo-1755442975535-0d6e856cfeb8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="A picture of me"
+          src="src\pictures\IMG_20250826_193049.jpg"
+          alt="Satyajit Ray"
           sx={{
-            width: "90%",
-            marginLeft: "3.5vw",
-            height: "90%",
+            position: "relative",
+            inset: 0,
+            width: "auto",
+            height: "80vw",
+            maxWidth: "70vw",
+            maxHeight: "70vh",
+            margin: "auto",
+            display: "flex",
             justifyContent: "center",
+            alignItems: "center",
             borderRadius: "12px",
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.5)",
-            position: "sticky",
-            marginBottom: "10%",
+            boxShadow: "0px 4px 30px rgba(0, 0, 0, 0.5)",
             paddingTop: 0,
             marginTop: 0,
+            marginBottom: 0,
           }}
         />
       </Container>
     </Box>
   );
 }
-
