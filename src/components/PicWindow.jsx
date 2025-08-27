@@ -1,46 +1,45 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-
-import Loader from './Loader.jsx';
+import * as React from "react";
+import { useState, useEffect } from "react";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Typography from "@mui/material/Typography";
+import Loader from "./Loader.jsx";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+  "& .MuiPaper-root": {
+    borderRadius: theme.spacing(3),
+    backgroundColor: "#d3f3f4ff",
+    color: "#000000ff",
+    boxShadow: "0px 10px 40px rgba(0,0,0,0.6)",
+    margin: theme.spacing(1), // add breathing space on mobile
+  },
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(3),
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "50vh",
   },
 }));
 
 export default function PicWindow({ open, onClose, imageUrl, title, desc }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageDisplay, setImageDisplay] = useState(false);
 
   useEffect(() => {
     if (open) {
       setImageLoaded(false);
-      setImageDisplay(false);
     }
   }, [open, imageUrl]);
 
   const handleImageLoad = () => {
-    // The image has finished downloading, now we delay its display.
-    setTimeout(() => {
-      setImageLoaded(true);
-    }, 1000); // 1000ms = 1-second delay
+    // smooth delay for loader animation
+    setTimeout(() => setImageLoaded(true), 600);
   };
-
-  useEffect(() => {
-    if (imageLoaded) {
-      setImageDisplay(true);
-    }
-  }, [imageLoaded]);
 
   return (
     <BootstrapDialog
@@ -48,41 +47,71 @@ export default function PicWindow({ open, onClose, imageUrl, title, desc }) {
       aria-labelledby="customized-dialog-title"
       open={open}
       maxWidth="lg"
-      sx={{justifyContent:'center',alignItems:'center'}}
+      fullWidth
     >
-      <DialogTitle sx={{ m: 0, p: 2,   backgroundColor:'#faffd6ff', fontFamily:'monospace', fontWeight:'bold', fontSize:20, overflow:'hidden' }} id="customized-dialog-title">
-        {title || 'Image'}
+      <DialogTitle
+        sx={{
+          m: 0,
+          p: { xs: 1.5, sm: 2 },
+          fontFamily: "'Merriweather', serif",
+          fontWeight: 700,
+          fontSize: { xs: "1.2rem", sm: "1.6rem", md: "1.8rem" },
+          color: "#000000ff",
+          backgroundColor: "#ffffb2ff",
+          borderBottom: "1px solid #333",
+          textAlign: "center",
+        }}
+        id="customized-dialog-title"
+      >
+        {title || "Artwork"}
       </DialogTitle>
-      <DialogTitle sx={{ m: 0, p: 2,   backgroundColor:'#A6B28B', fontFamily:'monospace', fontSize:15, overflow:'hidden' }} id="customized-dialog-title">
-        {desc || 'Description'}
-      </DialogTitle>
+
       <IconButton
         aria-label="close"
         onClick={onClose}
-        sx={(theme) => ({
-          position: 'absolute',
-          right: 8,
-          top: 8,
-          color: theme.palette.grey[500],
-        })}
+        sx={{
+          position: "absolute",
+          right: 12,
+          top: 12,
+          color: "#000000ff",
+          "&:hover": { color: "#363607ff" },
+        }}
       >
         <CloseIcon />
       </IconButton>
+
       <DialogContent dividers>
-        {!imageDisplay && <Loader />}
+        {!imageLoaded && <Loader />}
         <img
           src={imageUrl}
-          alt={title || 'Full-size image'}
+          alt={title || "Full-size artwork"}
           style={{
-            visibility: imageDisplay ? 'visible' : 'hidden',
-            maxWidth: '100%',
-            maxHeight: '80vh',
-            margin: 'auto',
+            display: imageLoaded ? "block" : "none",
+            maxWidth: "90vw",
+            maxHeight: "65vh",
+            borderRadius: "12px",
+            boxShadow: "0px 8px 24px rgba(0, 0, 0, 0.4)",
+            marginBottom: "20px",
           }}
           onLoad={handleImageLoad}
         />
+        {imageLoaded && (
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: { xs: 1.5, sm: 1.7 },
+              color: "#222", // dark text on white background
+              textAlign: "center",
+              maxWidth: { xs: "90%", sm: "600px", md: "800px" },
+              wordBreak: "break-word",
+            }}
+          >
+            {desc}
+          </Typography>
+        )}
       </DialogContent>
     </BootstrapDialog>
   );
-
 }
