@@ -18,7 +18,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function PicWindow({ open, onClose, imageUrl, title }) {
+export default function PicWindow({ open, onClose, imageUrl, title, desc }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDisplay, setImageDisplay] = useState(false);
 
@@ -53,6 +53,9 @@ export default function PicWindow({ open, onClose, imageUrl, title }) {
       <DialogTitle sx={{ m: 0, p: 2,   backgroundColor:'#faffd6ff', fontFamily:'monospace', fontWeight:'bold', fontSize:20, overflow:'hidden' }} id="customized-dialog-title">
         {title || 'Image'}
       </DialogTitle>
+      <DialogTitle sx={{ m: 0, p: 2,   backgroundColor:'#A6B28B', fontFamily:'monospace', fontSize:15, overflow:'hidden' }} id="customized-dialog-title">
+        {desc || 'Description'}
+      </DialogTitle>
       <IconButton
         aria-label="close"
         onClick={onClose}
@@ -81,4 +84,5 @@ export default function PicWindow({ open, onClose, imageUrl, title }) {
       </DialogContent>
     </BootstrapDialog>
   );
+
 }
