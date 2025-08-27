@@ -130,10 +130,11 @@ const itemData = [
   { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", author: "Author and Illustrator of Vagabond" },
   { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", author: "Eminent Artist, Oscar winning Film-Director, Author." },
   { img: "/pictures/ronin.jpg", title: "Lone Samurai", author: "Two Swords - One for man, another for monsters." },
-  { img: "/pictures/buddha.jpg", title: "Buddha in bliss", author: "Buddham Saranam Gachami" },
+  { img: "/pictures/budhha.jpg", title: "Buddha in bliss", author: "Buddham Saranam Gachami" },
   { img: "/pictures/ghost.jpg", title: "Ghost (COD)", author: "Lt. Simon 'Ghost' Riley (TF141)" },
   { img: "/pictures/bearded-guy.jpg", title: "Don't mess with me", author: "Sketch of a bearded guy." },
   { img: "/pictures/the-journey.jpg", title: "The Journey", author: "Journey through open barren lands" },
-  { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" },
+  { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" }
 ];
+
 
