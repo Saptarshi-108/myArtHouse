@@ -10,5 +10,6 @@ This is my little corner for storing everything that can be called â€œartisticâ€
 - Responsive layout  
 
 just go visit the link
-### [https://myarthouse.vercel.app/](https://myarthouse.netlify.app/)
+### Link to my website(https://myarthouse.netlify.app/)
+
 
