@@ -80,7 +80,7 @@ export default function Picture() {
 
             <ImageListItemBar
               title={item.title}
-              subtitle={<span>{item.author}</span>}
+              subtitle={<span>{item.desc}</span>}
               position="below"
               sx={{
                 "& .MuiImageListItemBar-title": {
@@ -112,34 +112,35 @@ export default function Picture() {
 }
 
 const itemData = [
-  { img: "/pictures/acvalhalla.png", title: "Viking Warrior", subtitle:"Take us to valhalla..." },
-  { img: "/pictures/avtar.jpg", title: "Aang, Sokka, Iroh", subtitle:"Some of my fav characters in ATLA." },
-  { img: "/pictures/batman.png", title: "The Dark Knight", subtitle:"I am vengeance." },
-  { img: "/pictures/bearded-guy.jpg", title: "Beard Guy", subtitle:"Guy with bombastic sideeye." },
-  { img: "/pictures/bobross.png", title: "Bob Ross", subtitle:"One of my favourite artists." },
-  { img: "/pictures/bobrossart.png", title: "The Mountains' call", subtitle:"Bob Ross inspired art." },
-  { img: "/pictures/budhha.jpg", title: "Blissful Buddha", subtitle:"	ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ " },
-  { img: "/pictures/cool.jpg", title: "Cool", subtitle:"Doodling in boring classes." },
-  { img: "/pictures/dark-corridor.jpg", title: "Dark Corridor", subtitle:"(pic.) Dark Hospital Corridor." },
-  { img: "/pictures/dark-is-the-night.png", title: "Dark is the Night", subtitle:"War kills men before a smoke does it." },
-  { img: "/pictures/fujikaze.jpg", title: "Fuji Kaze", subtitle:"Shinunoga E-Wa Album Cover(2021)" },
-  { img:"/pictures/hope.png",title:"Eyes filled with hope", subtitle:"He looks above for help and hope."},
-  { img: "/pictures/ghibli-howling-castle.jpg", title: "Ghibli Howl's Castle", subtitle:"from Howl's Moving Castle(Hayao Miyazaki)" },
-  { img: "/pictures/ghost.jpg", title: "Ghost", subtitle:"Lt. Simon 'Ghost' Riley" },
-  { img: "/pictures/hp-lovecraft.jpg", title: "HP Lovecraft", subtitle:"Father of cosmic horror" },
-  { img: "/pictures/kedarnath.png", title: "Kedarnath Mandir", subtitle:"Om namah shivay" },
-  { img: "/pictures/old-and-young.jpg", title: "Old and Young", subtitle:"Generation gap.. huh?" },
-  { img: "/pictures/agfa200.jpg", title: "Agfa 200", subtitle:"(pic.) My grandfather's camera." },
-  { img: "/pictures/robot.jpg", title: "CyberBot", subtitle:"His sword is smokin' hot (LITERALLY)" },
-  { img: "/pictures/ronin.jpg", title: "Lone Samurai", subtitle:"to become Invincible under the sun" },
-  { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", subtitle:"Eminent oscar winner director, writer and lot more." },
-  { img: "/pictures/shiva.png", title: "Shiva", subtitle:"rapid sketch of mahadev" },
-  { img: "/pictures/sketch.jpg", title: "Sketch", subtitle:"random sketch practice" },
-  { img: "/pictures/solitary-knight.jpg", title: "Solitary Knight", subtitle:"mourns the loss of his fallen brothers." },
-  { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", subtitle:"Writer and artist of Vagabond mangaka" },
-  { img: "/pictures/the-journey.jpg", title: "The Journey", subtitle:"travelling through barren lands" },
-  { img: "/pictures/smalltown.jpg", title: "My Small Town", subtitle:"(pic.) beautiful sky in a small town" },
-  { img: "/pictures/stairs.jpg", title: "Stairs", subtitle:"(pic.) Life is a series of stairs." },
-  { img: "/pictures/bluesky.jpg", title: "Blue Sky", subtitle:"(pic.) autumnal blue sky" },
+  { img: "/pictures/acvalhalla.png", title: "Viking Warrior", desc:"Take us to valhalla..." },
+  { img: "/pictures/avtar.jpg", title: "Aang, Sokka, Iroh", desc:"Some of my fav characters in ATLA." },
+  { img: "/pictures/batman.png", title: "The Dark Knight", desc:"I am vengeance." },
+  { img: "/pictures/bearded-guy.jpg", title: "Beard Guy", desc:"Guy with bombastic sideeye." },
+  { img: "/pictures/bobross.png", title: "Bob Ross", desc:"One of my favourite artists." },
+  { img: "/pictures/bobrossart.png", title: "The Mountains' call", desc:"Bob Ross inspired art." },
+  { img: "/pictures/budhha.jpg", title: "Blissful Buddha", desc:"	ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ " },
+  { img: "/pictures/cool.jpg", title: "Cool", desc:"Doodling in boring classes." },
+  { img: "/pictures/dark-corridor.jpg", title: "Dark Corridor", desc:"(pic.) Dark Hospital Corridor." },
+  { img: "/pictures/dark-is-the-night.png", title: "Dark is the Night", desc:"War kills men before a smoke does it." },
+  { img: "/pictures/fujikaze.jpg", title: "Fuji Kaze", desc:"Shinunoga E-Wa Album Cover(2021)" },
+  { img:"/pictures/hope.png",title:"Eyes filled with hope", desc:"He looks above for help and hope."},
+  { img: "/pictures/ghibli-howling-castle.jpg", title: "Ghibli Howl's Castle", desc:"from Howl's Moving Castle(Hayao Miyazaki)" },
+  { img: "/pictures/ghost.jpg", title: "Ghost", desc:"Lt. Simon 'Ghost' Riley" },
+  { img: "/pictures/hp-lovecraft.jpg", title: "HP Lovecraft", desc:"Father of cosmic horror" },
+  { img: "/pictures/kedarnath.png", title: "Kedarnath Mandir", desc:"Om namah shivay" },
+  { img: "/pictures/old-and-young.jpg", title: "Old and Young", desc:"Generation gap.. huh?" },
+  { img: "/pictures/agfa200.jpg", title: "Agfa 200", desc:"(pic.) My grandfather's camera." },
+  { img: "/pictures/robot.jpg", title: "CyberBot", desc:"His sword is smokin' hot (LITERALLY)" },
+  { img: "/pictures/ronin.jpg", title: "Lone Samurai", desc:"to become Invincible under the sun" },
+  { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", desc:"Eminent oscar winner director, writer and lot more." },
+  { img: "/pictures/shiva.png", title: "Shiva", desc:"rapid sketch of mahadev" },
+  { img: "/pictures/sketch.jpg", title: "Sketch", desc:"random sketch practice" },
+  { img: "/pictures/solitary-knight.jpg", title: "Solitary Knight", desc:"mourns the loss of his fallen brothers." },
+  { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", desc:"Writer and artist of Vagabond mangaka" },
+  { img: "/pictures/the-journey.jpg", title: "The Journey", desc:"travelling through barren lands" },
+  { img: "/pictures/smalltown.jpg", title: "My Small Town", desc:"(pic.) beautiful sky in a small town" },
+  { img: "/pictures/stairs.jpg", title: "Stairs", desc:"(pic.) Life is a series of stairs." },
+  { img: "/pictures/bluesky.jpg", title: "Blue Sky", desc:"(pic.) autumnal blue sky" },
 ];
+
 
