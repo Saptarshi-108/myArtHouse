@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -7,7 +6,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Underline from "./Underline.jsx";
-import Intro from "./Intro";
+import Intro from "./Intro.jsx";
 import PicWindow from "./PicWindow.jsx";
 
 export default function Picture() {
@@ -136,5 +135,6 @@ const itemData = [
   { img: "/pictures/the-journey.jpg", title: "The Journey", author: "Journey through open barren lands" },
   { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" }
 ];
+
 
 
