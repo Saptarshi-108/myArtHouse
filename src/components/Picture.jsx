@@ -74,8 +74,10 @@ export default function Picture() {
               style={{
                 cursor: "pointer",
                 borderRadius: 15,
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
               }}
             />
+
             <ImageListItemBar
               title={item.title}
               subtitle={<span>{item.author}</span>}
@@ -110,31 +112,33 @@ export default function Picture() {
 }
 
 const itemData = [
-  { img: "/pictures/avtar.jpg", title: "Team Avatar", author: "Some of my favourite characters from ATLA" },
-  { img: "/pictures/batman.png", title: "Batman", author: "The Dark knight" },
-  { img: "/pictures/bobross.png", title: "Bob Ross", author: "One of my favourite artists... Bob Ross" },
-  { img: "/pictures/bobrossart.png", title: "The Mountains", author: "From Bob Ross" },
-  { img: "/pictures/cool.jpg", title: "The Cool guy", author: "Doodling in boring classes..." },
-  { img: "/pictures/acvalhalla.png", title: "Viking warrior", author: "Take us to Valhalla!" },
-  { img: "/pictures/dark-is-the-night.png", title: "Dark is the Night", author: "A Soviet Rifleman smoking in the trench" },
-  { img: "/pictures/ghibli-howling-castle.jpg", title: "Ghibli Howl's Castle", author: "from Howl's Moving Castle (Hayao Miyazaki)" },
-  { img: "/pictures/fujikaze.jpg", title: "Fuji Kaze", author: "Shinunoga E-Wa Album Cover (2021)" },
-  { img: "/pictures/solitary-knight.jpg", title: "Solitary Knight", author: "Lonely knight mourning his fallen brothers." },
-  { img: "/pictures/kedarnath.png", title: "Kedarnath Mandir", author: "Om namah shivay (ॐ नमः शिवाय)" },
-  { img: "/pictures/hp-lovecraft.jpg", title: "H.P. Lovecraft", author: "Father of Cosmic Horror" },
-  { img: "/pictures/old-and-young.jpg", title: "Old and Young", author: "Am I bored?" },
-  { img: "/pictures/robot.jpg", title: "Smokin' Hot", author: "This gladiator has a hot sword. LITERALLY." },
-  { img: "/pictures/shiva.png", title: "Mahadev", author: "Har Har Mahadev" },
-  { img: "/pictures/sketch.jpg", title: "Portrait sketches", author: "Sketching for practice" },
-  { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", author: "Author and Illustrator of Vagabond" },
-  { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", author: "Eminent Artist, Oscar winning Film-Director, Author." },
-  { img: "/pictures/ronin.jpg", title: "Lone Samurai", author: "Two Swords - One for man, another for monsters." },
-  { img: "/pictures/budhha.jpg", title: "Buddha in bliss", author: "Buddham Saranam Gachami" },
-  { img: "/pictures/ghost.jpg", title: "Ghost (COD)", author: "Lt. Simon 'Ghost' Riley (TF141)" },
-  { img: "/pictures/bearded-guy.jpg", title: "Don't mess with me", author: "Sketch of a bearded guy." },
-  { img: "/pictures/the-journey.jpg", title: "The Journey", author: "Journey through open barren lands" },
-  { img: "/pictures/dark-corridor.jpg", title: "The Dark Corridor", author: "Dark Corridor in a Hospital (Pic.)" }
+  { img: "/pictures/acvalhalla.png", title: "AC Valhalla", subtitle:"" },
+  { img: "/pictures/avtar.jpg", title: "Avatar", subtitle:"" },
+  { img: "/pictures/batman.png", title: "Batman", subtitle:"" },
+  { img: "/pictures/bearded-guy.jpg", title: "Bearded Guy", subtitle:"" },
+  { img: "/pictures/bobross.png", title: "Bob Ross", subtitle:"" },
+  { img: "/pictures/bobrossart.png", title: "Bob Ross Art", subtitle:"" },
+  { img: "/pictures/budhha.jpg", title: "Buddha", subtitle:"" },
+  { img: "/pictures/cool.jpg", title: "Cool", subtitle:"" },
+  { img: "/pictures/dark-corridor.jpg", title: "Dark Corridor", subtitle:"" },
+  { img: "/pictures/dark-is-the-night.png", title: "Dark is the Night", subtitle:"" },
+  { img: "/pictures/fujikaze.jpg", title: "Fuji Kaze", subtitle:"" },
+  { img:"/pictures/hope.png",title:"Eyes filled with hope", subtitle:""},
+  { img: "/pictures/ghibli-howling-castle.jpg", title: "Ghibli Howling Castle", subtitle:"" },
+  { img: "/pictures/ghost.jpg", title: "Ghost", subtitle:"" },
+  { img: "/pictures/hp-lovecraft.jpg", title: "HP Lovecraft", subtitle:"" },
+  { img: "/pictures/kedarnath.png", title: "Kedarnath", subtitle:"" },
+  { img: "/pictures/old-and-young.jpg", title: "Old and Young", subtitle:"" },
+  { img: "/pictures/agfa200.jpg", title: "Agfa 200 (pic.)", subtitle:"" },
+  { img: "/pictures/robot.jpg", title: "Robot", subtitle:"" },
+  { img: "/pictures/ronin.jpg", title: "Ronin", subtitle:"" },
+  { img: "/pictures/satyajit-ray.png", title: "Satyajit Ray", subtitle:"" },
+  { img: "/pictures/shiva.png", title: "Shiva", subtitle:"" },
+  { img: "/pictures/sketch.jpg", title: "Sketch", subtitle:"" },
+  { img: "/pictures/solitary-knight.jpg", title: "Solitary Knight", subtitle:"" },
+  { img: "/pictures/takehiko-inoue.jpg", title: "Takehiko Inoue", subtitle:"" },
+  { img: "/pictures/the-journey.jpg", title: "The Journey", subtitle:"" },
+  { img: "/pictures/smalltown.jpg", title: "My Small Town (pic.)", subtitle:"" },
+  { img: "/pictures/stairs.jpg", title: "Stairs (pic.)", subtitle:"" },
+  { img: "/pictures/bluesky.jpg", title: "Blue Sky (pic.)", subtitle:"" },
 ];
-
-
-

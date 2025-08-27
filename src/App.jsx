@@ -8,10 +8,10 @@ import FullLoad from "./components/FullLoad";
 const App = () => {
   return (
     <>
-    <FullLoad  />
-      <Header />
-      <Picture />
-      <Footer />
+    <FullLoad/>
+      <Header/>
+      <Picture/>
+      <Footer/>
     </>
   );
 };
