@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 import { HideOnScroll } from "./Header";
 import TypeWriter from "./TypeWriter";
-import { useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer"; 
 
 
@@ -201,3 +201,4 @@ export default function Intro() {
     </Box>
   );
 }
+
