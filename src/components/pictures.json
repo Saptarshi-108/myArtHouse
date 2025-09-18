@@ -2,7 +2,6 @@
   { "img": "/pictures/acvalhalla.png", "title": "Viking Warrior", "desc": "Valhalla calling me... https://genius.com/Miracle-of-sound-valhalla-calling-lyrics" },
   { "img": "/pictures/avtar.jpg", "title": "Aang, Sokka, Iroh", "desc": "I started watching ATLA when I was a little kid. I liked it a lot, but could'nt bring myself to finish it. Recently finished watching, and god did I like it. Appa...Yip Tip!" },
   { "img": "/pictures/batman.png", "title": "The Dark Knight", "desc": "I am vengeance. I am Batman." },
-  { "img": "/pictures/regalgirl5.png", "title": "Aristocrat Lady", "desc": "Digital sketch of a medieval noblewoman." },
    { "img": "/pictures/cool.jpg", "title": "Cool", "desc": "Doodling in boring classes... now there's a cool looking guy staring at me where there would have been notes on BFS traversal." },
   { "img": "/pictures/bobross.png", "title": "Bob Ross", "desc": "One of my favourite artists, whom I admire not just because of his skills but his overall outlook towards life itself." },
   { "img": "/pictures/budhha.jpg", "title": "Blissful Buddha", "desc": "ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ (Om Mani Peme Hung/Om Mani Padme Hum)" },
@@ -31,5 +30,6 @@
   { "img": "/pictures/stairs.jpg", "title": "Stairs", "desc": "(pic.) Life is a series of stairs." },
   { "img": "/pictures/bluesky.jpg", "title": "Blue Sky", "desc": "(pic.) autumnal blue sky" }
 ]
+
 
 
