@@ -59,10 +59,14 @@ const Footer = () => {
           <a href="https://github.com/Saptarshi-108" target="_blank" rel="noopener noreferrer">
             <FaGithub style={{ fontSize: "24px", color: "white" }} />
           </a>
+          <a href="https://www.youtube.com/@DoodleDude7" target="_blank" rel="noopener noreferrer">
+            <FaYoutube style={{ fontSize: "24px", color: "white" }} />
+          </a>
         </Stack>
       </Stack>
     </Box>
   );
 };
+
 
 export default Footer;
