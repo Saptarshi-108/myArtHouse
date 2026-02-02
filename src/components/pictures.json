@@ -28,8 +28,12 @@
   { "img": "/pictures/the-journey.jpg", "title": "The Journey", "desc": "travelling through barren lands on a old " },
   { "img": "/pictures/smalltown.jpg", "title": "My Small Town", "desc": "(pic.) beautiful sky in my small town" },
   { "img": "/pictures/stairs.jpg", "title": "Stairs", "desc": "(pic.) Life is a series of stairs." },
-  { "img": "/pictures/bluesky.jpg", "title": "Blue Sky", "desc": "(pic.) autumnal blue sky" }
-]
-
-
-
+  { "img": "/pictures/bluesky.jpg", "title": "Blue Sky", "desc": "(pic.) autumnal blue sky" },
+  {"img" : "/pictures/cold.jpg", "title": "Too Cold", "desc": "Winter is coming folks, better buckle up"},
+  {"img" : "/pictures/jomarch_final.jpg","title":"Pout", "desc" : "Girl pouting her lips. From Pinterest."},
+  {"img" : "/pictures/rajasthan2.jpg", "title": "Rajasthani man", "desc": "A tribal person wearing traditional clothes and headdress, a turban."},
+  {"img" : "/pictures/in_the_middle_of_nowhere_(dark).jpg", "title": "In the middle of nowhere (dark ver.)", "desc": "A desolate gas station, in the middle of nowhere."},
+  {"img" : "/pictures/in_the_middle_of_nowhere_(lit).jpg", "title": "In the middle of nowhere (light ver.)", "desc": "A desolate gas station, in the middle of nowhere."},
+  {"img" : "/pictures/cap_girl.jpg","title":"Capped Girl", "desc" : "Rapid sketch of girl wearing a cap. Process available on my Youtube channel."},
+   {"img" : "/pictures/bored.png","title":"Skateboard", "desc" : "Was really bored with studying Compiler Designing, ended up doing this beside my notes."},
+   {"img" : "/pictures/castle.jpg","title":"Distant Castle", "desc" : "There stands a medieval castle in the distant horizon"}]
