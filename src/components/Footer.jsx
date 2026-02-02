@@ -62,6 +62,14 @@ const Footer = () => {
           {/* <a href="https://www.youtube.com/@DoodleDude7" target="_blank" rel="noopener noreferrer">
             <FaYoutube style={{ fontSize: "24px", color: "white" }} />
           </a> */}
+          <Box component="a"
+     href="https://www.youtube.com/@DoodleDude7"
+     target="_blank"
+     rel="noopener noreferrer"
+     sx={{ color: "white" }}>
+  <FaYoutube size={24} />
+</Box>
+
         </Stack>
       </Stack>
     </Box>
@@ -70,5 +78,6 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
